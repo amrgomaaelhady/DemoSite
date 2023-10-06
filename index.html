@@ -1,0 +1,55 @@
+<html>
+<head>
+    <style>
+        /* Add some style to the chat window */
+        #chat-window {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            overflow-y: scroll;
+            margin: auto;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Add some style to the chat messages list */
+        #chat-messages {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add some style to the chat messages list items */
+        #chat-messages li {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Add some style to the user messages */
+        #chat-messages li.user {
+            background-color: lightblue;
+            color: black;
+            text-align: left;
+        }
+
+        /* Add some style to the assistant messages */
+        #chat-messages li.assistant {
+            background-color: lightgreen;
+            color: black;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- Create a div element for the chat window -->
+    <div id="chat-window">
+        <!-- Create a ul element for the chat messages list -->
+        <ul id="chat-messages">
+            
+        </ul>
+    </div>
+    <!-- Link the script.js file that contains the JavaScript code -->
+    <script src="script.js"></script>
+</body>
+</html>
