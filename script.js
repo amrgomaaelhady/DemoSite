@@ -78,10 +78,19 @@ function playMessages() {
         var span = document.createElement("span");
         // Set the text content of the span element to the word
         span.textContent = word;
-        // Append the span element to the last list item element in the chat messages list
-        document.getElementById("chat-messages").lastChild.appendChild(span);
-        // Add a space after the word
-        document.getElementById("chat-messages").lastChild.appendChild(document.createTextNode(" "));
+        // Append a space after the word using createTextNode method
+        var space = document.createTextNode(" ");
+        // Append both span and space elements to an array using push method
+        var elements = [];
+        elements.push(span);
+        elements.push(space);
+        // Reverse the order of elements in array using reverse method 
+        elements.reverse();
+        // Loop through each element in array using forEach method 
+        elements.forEach(function(element) {
+            // Append each element to last list item element in chat messages list using appendChild method
+            document.getElementById("chat-messages").lastChild.appendChild(element);
+        });
         // Scroll to the bottom of the chat messages list
         document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
         // Increment the word index by one
