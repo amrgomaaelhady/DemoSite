@@ -61,8 +61,7 @@ function displayMessage() {
         document.getElementById("chat-messages").appendChild(li);
         // Scroll to the bottom of the chat messages list
         document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
-        // Increment the message index by one
-        messageIndex++;
+        // Do not increment the message index by one here
     }
 }
 
