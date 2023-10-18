@@ -89,7 +89,7 @@ function playMessages() {
             // Set the message done variable to true
             messageDone = true;
             // Set a timeout to display the next message after a delay based on the length of the message text using length property and multiplying it by 100 milliseconds 
-            setTimeout(displayMessage, message.text.length * 100);
+            setTimeout(displayMessage, 100);
         }
     }
 }
