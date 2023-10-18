@@ -84,8 +84,7 @@ function playMessages() {
         var elements = [];
         elements.push(span);
         elements.push(space);
-        // Reverse the order of elements in array using reverse method 
-        elements.reverse();
+        // Do not reverse order of elements in array here 
         // Loop through each element in array using forEach method 
         elements.forEach(function(element) {
             // Append each element to last list item element in chat messages list using appendChild method
