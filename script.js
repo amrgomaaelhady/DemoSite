@@ -71,8 +71,8 @@ function playMessages() {
     if (messageIndex < messages.length) {
         // Get the current message from the array
         var message = messages[messageIndex];
-        // Get the current word from the message text by splitting it by spaces
-        var words = message.text.split(" ");
+        // Get the current word from the message text by splitting it by a regular expression that matches any non-word character using split method 
+        var words = message.text.split(/\W+/);
         var word = words[wordIndex];
         // Create a span element for the word
         var span = document.createElement("span");
