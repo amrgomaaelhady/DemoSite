@@ -58,14 +58,14 @@ function playMessages() {
         // Check if there are more words in the current message
         if (wordIndex < words.length) {
             // Set a timeout to play the next word after a delay
-            setTimeout(playMessages, 80);
+            setTimeout(playMessages, 120);
         } else {
             // Reset the word index to zero
             wordIndex = 0;
             // Set the message done variable to true
             messageDone = true;
             // Set a timeout to display the next message after a delay
-            setTimeout(displayMessage, 1000);
+            setTimeout(displayMessage, 10000);
         }
     }
 }
@@ -74,7 +74,7 @@ function playMessages() {
 window.onload = displayMessage;
 
 // Call the playMessages function when the first message is displayed
-setTimeout(playMessages, 1000);
+setTimeout(playMessages, 10000);
 
 // Define an interval to check if the current message is done and play the next one if it is true
 setInterval(function() {
