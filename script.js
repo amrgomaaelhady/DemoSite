@@ -43,6 +43,8 @@ function displayMessage() {
         // Get the next message from the array
         message = messages[messageIndex];
     }
+    // Update the current message type
+    messageType = message.type;
     // Create a list item element for the message
     var li = document.createElement("li");
     // Add a class to the list item element based on the message type
@@ -53,8 +55,6 @@ function displayMessage() {
     document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
     // Increment the message index by one
     messageIndex++;
-    // Update the current message type
-    messageType = message.type;
 }
 
 // Define a function to play the messages word by word
