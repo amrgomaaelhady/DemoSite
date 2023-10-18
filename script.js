@@ -23,8 +23,8 @@ var messages = [
 // Define a variable to store the current message index
 var messageIndex = 0;
 
-// Define a variable to store the current word index
-var wordIndex = 0;
+// Define a variable to store the current character index
+var charIndex = 0;
 
 // Define a variable to check if the current message is done
 var messageDone = false;
@@ -65,43 +65,27 @@ function displayMessage() {
     }
 }
 
-// Define a function to play the messages word by word
+// Define a function to play the messages character by character
 function playMessages() {
     // Check if there are more messages to display
     if (messageIndex < messages.length) {
         // Get the current message from the array
         var message = messages[messageIndex];
-        // Get the current word from the message text by splitting it by spaces
-        var words = message.text.split(" ");
-        var word = words[wordIndex];
-        // Create a span element for the word
-        var span = document.createElement("span");
-        // Set the text content of the span element to the word
-        span.textContent = word;
-        // Append a space after the word using createTextNode method
-        var space = document.createTextNode(" ");
-        // Append both span and space elements to an array using push method 
-        var elements = [];
-        elements.push(span);
-        elements.push(space);
-        // Reverse order of elements in array using reverse method 
-        elements.reverse();
-        // Loop through each element in array using forEach method 
-        elements.forEach(function(element) {
-            // Append each element to last list item element in chat messages list using appendChild method
-            document.getElementById("chat-messages").lastChild.appendChild(element);
-        });
+        // Get the current character from the message text by using charAt method 
+        var char = message.text.charAt(charIndex);
+        // Append the character to last list item element in chat messages list using appendChild method 
+        document.getElementById("chat-messages").lastChild.appendChild(document.createTextNode(char));
         // Scroll to the bottom of the chat messages list
         document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
-        // Increment the word index by one
-        wordIndex++;
-        // Check if there are more words in the current message
-        if (wordIndex < words.length) {
-            // Set a timeout to play the next word after a delay of 100 milliseconds instead of 80 
-            setTimeout(playMessages, 100);
+        // Increment the character index by one
+        charIndex++;
+        // Check if there are more characters in the current message
+        if (charIndex < message.text.length) {
+            // Set a timeout to play the next character after a delay of 50 milliseconds 
+            setTimeout(playMessages, 50);
         } else {
-            // Reset the word index to zero
-            wordIndex = 0;
+            // Reset the character index to zero
+            charIndex = 0;
             // Set the message done variable to true
             messageDone = true;
             // Set a timeout to display the next message after a delay based on the length of the message text using length property and multiplying it by 100 milliseconds 
