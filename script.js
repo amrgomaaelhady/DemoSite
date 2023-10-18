@@ -71,8 +71,8 @@ function playMessages() {
     if (messageIndex < messages.length) {
         // Get the current message from the array
         var message = messages[messageIndex];
-        // Get the current character from the message text by using slice method with charIndex and charIndex + 1 as arguments 
-        var char = message.text.slice(charIndex, charIndex + 1);
+        // Get the current character from the message text by using substring method with charIndex and charIndex + 1 as arguments 
+        var char = message.text.substring(charIndex, charIndex + 1);
         // Append the character to last list item element in chat messages list using appendChild method 
         document.getElementById("chat-messages").lastChild.appendChild(document.createTextNode(char));
         // Scroll to the bottom of the chat messages list
