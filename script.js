@@ -71,8 +71,8 @@ function playMessages() {
     if (messageIndex < messages.length) {
         // Get the current message from the array
         var message = messages[messageIndex];
-        // Get the current character from the message text by using charAt method 
-        var char = message.text.charAt(charIndex);
+        // Get the current character from the message text by using slice method with charIndex and charIndex + 1 as arguments 
+        var char = message.text.slice(charIndex, charIndex + 1);
         // Append the character to last list item element in chat messages list using appendChild method 
         document.getElementById("chat-messages").lastChild.appendChild(document.createTextNode(char));
         // Scroll to the bottom of the chat messages list
@@ -81,15 +81,15 @@ function playMessages() {
         charIndex++;
         // Check if there are more characters in the current message
         if (charIndex < message.text.length) {
-            // Set a timeout to play the next character after a delay of 50 milliseconds 
-            setTimeout(playMessages, 50);
+            // Set a timeout to play the next character after a delay of 25 milliseconds instead of 50 
+            setTimeout(playMessages, 25);
         } else {
             // Reset the character index to zero
             charIndex = 0;
             // Set the message done variable to true
             messageDone = true;
             // Set a timeout to display the next message after a delay based on the length of the message text using length property and multiplying it by 100 milliseconds 
-            setTimeout(displayMessage, 100);
+            setTimeout(displayMessage, message.text.length * 100);
         }
     }
 }
