@@ -1,9 +1,9 @@
 // Define an array of preloaded messages
 var messages = [
-    {type: "person1", text: "Hi everyone, welcome to our WhatsApp group.   "},
-    {type: "person2", text: "Hello, thank you for inviting me.   "},
-    {type: "person3", text: "Hi, nice to meet you all.   "},
-    {type: "person4", text: "Hey, what's up?   "},
+    {type: "person1", text: "    Hi everyone, welcome to our WhatsApp group."},
+    {type: "person2", text: "    Hello, thank you for inviting me."},
+    {type: "person3", text: "    Hi, nice to meet you all."},
+    {type: "person4", text: "    Hey, what's up?"},
     {type: "person5", text: "Hi, I'm happy to be here."},
     {type: "person6", text: "Hello, this is awesome."},
     {type: "person1", text: "So, what do you guys want to talk about?"},
