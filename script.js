@@ -1,12 +1,23 @@
 // Define an array of preloaded messages
 var messages = [
-    {type: "user", text: "Hi, I would like your help to create a website with a simple structre that looks like this chat interface I am having with you."},
-    {type: "assistant", text: "Hello, thank you for your interest in creating a website with a simple chat interface. I will try to help you with some basic steps and resources."},
-    {type: "user", text: "This website https://mdbootstrap.com/docs/standard/extended/chat/ have a basic template with some code in it. Can you create for me an HTML code that I can use with a preloaded text (you can put any random text in it for now) for this kind of chat and create the code that make it play word by word (like the text you generate) once the page is loaded."},
-    {type: "assistant", text: "Sure, I can help you create an HTML code that you can use with a preloaded text for a chat interface like the one you linked. Here is the code that I generated using my own words and knowledge:"},
-    {type: "assistant", text: "<html>..."},
-    {type: "user", text: "Wow, thank you so much! You are amazing!"},
-    {type: "assistant", text: "You're welcome. I'm glad I could help. 😊"}
+    {type: "person1", text: "Hi everyone, welcome to our WhatsApp group."},
+    {type: "person2", text: "Hello, thank you for inviting me."},
+    {type: "person3", text: "Hi, nice to meet you all."},
+    {type: "person4", text: "Hey, what's up?"},
+    {type: "person5", text: "Hi, I'm happy to be here."},
+    {type: "person6", text: "Hello, this is awesome."},
+    {type: "person1", text: "So, what do you guys want to talk about?"},
+    {type: "person2", text: "How about we share some fun facts about ourselves?"},
+    {type: "person3", text: "Sure, sounds good."},
+    {type: "person4", text: "OK, I'll start. I love pizza."},
+    {type: "person5", text: "Me too!"},
+    {type: "person6", text: "Pizza is great."},
+    {type: "person1", text: "I agree. Pizza is life."},
+    {type: "person2", text: "What kind of pizza do you like?"},
+    {type: "person3", text: "I like pepperoni and cheese."},
+    {type: "person4", text: "I like pineapple and ham."},
+    {type: "person5", text: "I like mushrooms and olives."},
+    {type: "person6", text: "I like everything on my pizza."}
 ];
 
 // Define a variable to store the current message index
@@ -58,14 +69,14 @@ function playMessages() {
         // Check if there are more words in the current message
         if (wordIndex < words.length) {
             // Set a timeout to play the next word after a delay
-            setTimeout(playMessages, 120);
+            setTimeout(playMessages, 80);
         } else {
             // Reset the word index to zero
             wordIndex = 0;
             // Set the message done variable to true
             messageDone = true;
             // Set a timeout to display the next message after a delay
-            setTimeout(displayMessage, 10000);
+            setTimeout(displayMessage, 1000);
         }
     }
 }
@@ -74,7 +85,7 @@ function playMessages() {
 window.onload = displayMessage;
 
 // Call the playMessages function when the first message is displayed
-setTimeout(playMessages, 10000);
+setTimeout(playMessages, 1000);
 
 // Define an interval to check if the current message is done and play the next one if it is true
 setInterval(function() {
