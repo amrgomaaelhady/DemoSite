@@ -71,8 +71,8 @@ function playMessages() {
     if (messageIndex < messages.length) {
         // Get the current message from the array
         var message = messages[messageIndex];
-        // Get the current word from the message text by splitting it by a regular expression that matches any non-word character using split method 
-        var words = message.text.split(/\W+/);
+        // Get the current word from the message text by splitting it by spaces
+        var words = message.text.split(" ");
         var word = words[wordIndex];
         // Create a span element for the word
         var span = document.createElement("span");
@@ -80,28 +80,32 @@ function playMessages() {
         span.textContent = word;
         // Append a space after the word using createTextNode method
         var space = document.createTextNode(" ");
-        // Create a document fragment using createDocumentFragment method 
-        var fragment = document.createDocumentFragment();
-        // Append both span and space elements to document fragment using appendChild method 
-        fragment.appendChild(span);
-        fragment.appendChild(space);
-        // Append document fragment to last list item element in chat messages list using appendChild method 
-        document.getElementById("chat-messages").lastChild.appendChild(fragment);
+        // Append both span and space elements to an array using push method 
+        var elements = [];
+        elements.push(span);
+        elements.push(space);
+        // Reverse order of elements in array using reverse method 
+        elements.reverse();
+        // Loop through each element in array using forEach method 
+        elements.forEach(function(element) {
+            // Append each element to last list item element in chat messages list using appendChild method
+            document.getElementById("chat-messages").lastChild.appendChild(element);
+        });
         // Scroll to the bottom of the chat messages list
         document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
         // Increment the word index by one
         wordIndex++;
         // Check if there are more words in the current message
         if (wordIndex < words.length) {
-            // Set a timeout to play the next word after a delay
-            setTimeout(playMessages, 80);
+            // Set a timeout to play the next word after a delay of 100 milliseconds instead of 80 
+            setTimeout(playMessages, 100);
         } else {
             // Reset the word index to zero
             wordIndex = 0;
             // Set the message done variable to true
             messageDone = true;
-            // Set a timeout to display the next message after a delay
-            setTimeout(displayMessage, 1000);
+            // Set a timeout to display the next message after a delay of 1500 milliseconds instead of 1000 
+            setTimeout(displayMessage, 1500);
         }
     }
 }
