@@ -34,27 +34,36 @@ var messageType = "";
 
 // Define a function to display a message
 function displayMessage() {
-    // Get the current message from the array
-    var message = messages[messageIndex];
-    // Check if the current message type matches the previous one
-    if (message.type == messageType) {
+    // Check if there are more messages to display
+    if (messageIndex < messages.length) {
+        // Get the current message from the array
+        var message = messages[messageIndex];
+        // Check if the current message type matches the previous one
+        if (message.type == messageType) {
+            // Increment the message index by one
+            messageIndex++;
+            // Check if there are more messages to display
+            if (messageIndex < messages.length) {
+                // Get the next message from the array
+                message = messages[messageIndex];
+            } else {
+                // Stop the function
+                return;
+            }
+        }
+        // Update the current message type
+        messageType = message.type;
+        // Create a list item element for the message
+        var li = document.createElement("li");
+        // Add a class to the list item element based on the message type
+        li.classList.add(message.type);
+        // Append the list item element to the chat messages list
+        document.getElementById("chat-messages").appendChild(li);
+        // Scroll to the bottom of the chat messages list
+        document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
         // Increment the message index by one
         messageIndex++;
-        // Get the next message from the array
-        message = messages[messageIndex];
     }
-    // Update the current message type
-    messageType = message.type;
-    // Create a list item element for the message
-    var li = document.createElement("li");
-    // Add a class to the list item element based on the message type
-    li.classList.add(message.type);
-    // Append the list item element to the chat messages list
-    document.getElementById("chat-messages").appendChild(li);
-    // Scroll to the bottom of the chat messages list
-    document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
-    // Increment the message index by one
-    messageIndex++;
 }
 
 // Define a function to play the messages word by word
