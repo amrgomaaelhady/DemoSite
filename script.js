@@ -29,10 +29,20 @@ var wordIndex = 0;
 // Define a variable to check if the current message is done
 var messageDone = false;
 
+// Define a variable to store the current message type
+var messageType = "";
+
 // Define a function to display a message
 function displayMessage() {
     // Get the current message from the array
     var message = messages[messageIndex];
+    // Check if the current message type matches the previous one
+    if (message.type == messageType) {
+        // Increment the message index by one
+        messageIndex++;
+        // Get the next message from the array
+        message = messages[messageIndex];
+    }
     // Create a list item element for the message
     var li = document.createElement("li");
     // Add a class to the list item element based on the message type
@@ -43,6 +53,8 @@ function displayMessage() {
     document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
     // Increment the message index by one
     messageIndex++;
+    // Update the current message type
+    messageType = message.type;
 }
 
 // Define a function to play the messages word by word
