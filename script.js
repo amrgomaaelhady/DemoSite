@@ -80,16 +80,13 @@ function playMessages() {
         span.textContent = word;
         // Append a space after the word using createTextNode method
         var space = document.createTextNode(" ");
-        // Append both span and space elements to an array using push method
-        var elements = [];
-        elements.push(span);
-        elements.push(space);
-        // Do not reverse order of elements in array here 
-        // Loop through each element in array using forEach method 
-        elements.forEach(function(element) {
-            // Append each element to last list item element in chat messages list using appendChild method
-            document.getElementById("chat-messages").lastChild.appendChild(element);
-        });
+        // Create a document fragment using createDocumentFragment method 
+        var fragment = document.createDocumentFragment();
+        // Append both span and space elements to document fragment using appendChild method 
+        fragment.appendChild(span);
+        fragment.appendChild(space);
+        // Append document fragment to last list item element in chat messages list using appendChild method 
+        document.getElementById("chat-messages").lastChild.appendChild(fragment);
         // Scroll to the bottom of the chat messages list
         document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
         // Increment the word index by one
