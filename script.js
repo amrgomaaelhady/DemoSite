@@ -91,7 +91,6 @@ function playMessages() {
             // Reset the character index to zero
             charIndex = 0;
             // Set the message done variable to true
-            setTimeout(displayMessage, 100);
             messageDone = true;
             // Set a timeout to display the next message after a delay based on the length of the message text using length property and multiplying it by 100 milliseconds 
         }
@@ -109,6 +108,7 @@ setInterval(function() {
         // Set the message done variable to false
         messageDone = false;
         // Call the playMessages function
+        displayMessage();
         playMessages();
     }
 }, 100);
