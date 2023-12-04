@@ -121,12 +121,14 @@ function playMessages() {
     }
 }
 
-// Define a function to run script 1
+// Assign the messages1 array to the script1 function
 function script1() {
     // Stop the current script if any
     stopScript();
     // Assign the current script to script1
     currentScript = script1;
+    // Assign the messages1 array to the current script
+    currentScript.messages = messages1; // Add this line
     // Reset the message index to zero
     messageIndex = 0;
     // Clear the chat messages list
@@ -137,12 +139,14 @@ function script1() {
     playMessages();
 }
 
-// Define a function to run script 2
+// Assign the messages2 array to the script2 function
 function script2() {
     // Stop the current script if any
     stopScript();
     // Assign the current script to script2
     currentScript = script2;
+    // Assign the messages2 array to the current script
+    currentScript.messages = messages2; // Add this line
     // Reset the message index to zero
     messageIndex = 0;
     // Clear the chat messages list
