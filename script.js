@@ -32,6 +32,7 @@ var messages2 = [
     {type: "person2", text: "<PLAN>\nNext time, I can explore the possibility of a land-based park (A3) if the Environmental League is not satisfied with the current proposal. I can also consider a union quota of 1:1 (C3) if the local labour union is not happy with unlimited union preference (C1). However, I need to ensure that the total score remains above 55.\n</PLAN>"},
 ];
 
+
 // Define a variable to store the current message index
 var messageIndex = 0;
 
@@ -62,17 +63,17 @@ function stopScript() {
 // Define a function to display a message
 function displayMessage() {
     // Check if there are more messages to display
-    if (messageIndex < currentScript.length) {
+    if (messageIndex < currentScript.messages.length) { // Add .messages here
         // Get the current message from the array
-        var message = currentScript[messageIndex];
+        var message = currentScript.messages[messageIndex]; // Add .messages here
         // Check if the current message type matches the previous one
         if (message.type == messageType) {
             // Increment the message index by one
             messageIndex++;
             // Check if there are more messages to display
-            if (messageIndex < currentScript.length) {
+            if (messageIndex < currentScript.messages.length) { // Add .messages here
                 // Get the next message from the array
-                message = currentScript[messageIndex];
+                message = currentScript.messages[messageIndex]; // Add .messages here
             } else {
                 // Stop the function
                 return;
@@ -95,9 +96,9 @@ function displayMessage() {
 // Define a function to play the messages character by character
 function playMessages() {
     // Check if there are more messages to display
-    if (messageIndex < currentScript.length) {
+    if (messageIndex < currentScript.messages.length) { // Add .messages here
         // Get the current message from the array
-        var message = currentScript[messageIndex];
+        var message = currentScript.messages[messageIndex]; // Add .messages here
         // Get the current character from the message text by using substring method with charIndex and charIndex + 1 as arguments 
         var char = message.text.substring(charIndex, charIndex + 1);
         // Append the character to last list item element in chat messages list using appendChild method 
@@ -121,7 +122,7 @@ function playMessages() {
     }
 }
 
-// Assign the messages1 array to the script1 function
+// Define a function to run script 1
 function script1() {
     // Stop the current script if any
     stopScript();
@@ -139,7 +140,7 @@ function script1() {
     playMessages();
 }
 
-// Assign the messages2 array to the script2 function
+// Define a function to run script 2
 function script2() {
     // Stop the current script if any
     stopScript();
