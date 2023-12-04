@@ -67,6 +67,28 @@
             color: black;
             text-align: left;
         }
+
+        /* Add some style to the buttons */
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Add some color to the buttons */
+        #button1 {
+            background-color: lightgreen;
+            color: black;
+        }
+
+        #button2 {
+            background-color: lightblue;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -77,6 +99,9 @@
             
         </ul>
     </div>
+    <!-- Create two button elements with different id attributes -->
+    <button id="button1">Play Script 1</button>
+    <button id="button2">Play Script 2</button>
     <!-- Link the script.js file that contains the JavaScript code -->
     <script src="script.js"></script>
 </body>
