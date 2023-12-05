@@ -48,6 +48,12 @@ var messageType = "";
 // Define a variable to store the current script
 var currentScript = null;
 
+// Define a variable to store the timeout
+var timeout = null;
+
+// Define a variable to store the interval
+var interval = null;
+
 // Define a function to stop the current script
 function stopScript() {
     // Check if there is a current script
@@ -63,7 +69,6 @@ function stopScript() {
         messageType = ""; // Add this line
     }
 }
-
 
 // Define a function to display a message
 function displayMessage() {
@@ -94,7 +99,8 @@ function displayMessage() {
         document.getElementById("chat-messages").appendChild(li);
         // Scroll to the bottom of the chat messages list
         document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
-        // Do not increment the message index by one here
+        // Increment the message index by one
+        messageIndex++; // Add this line
     }
 }
 
@@ -115,14 +121,14 @@ function playMessages() {
         // Check if there are more characters in the current message
         if (charIndex < message.text.length) {
             // Set a timeout to play the next character after a delay of 25 milliseconds instead of 50 
-            currentScript.timeout = setTimeout(playMessages, 25);
+            timeout = setTimeout(playMessages, 25); // Change currentScript.timeout to timeout
         } else {
             // Reset the character index to zero
             charIndex = 0;
             // Set the message done variable to true
             messageDone = true;
             // Set a timeout to display the next message after a delay based on the length of the message text using length property and multiplying it by 100 milliseconds 
-            currentScript.timeout = setTimeout(displayMessage, message.text.length * 100);
+            timeout = setTimeout(displayMessage, message.text.length * 100); // Change currentScript.timeout to timeout
         }
     }
 }
