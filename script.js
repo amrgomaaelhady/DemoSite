@@ -111,8 +111,8 @@ function script1() {
 	console.log("disabled");
 	document.getElementById("button1").style.backgroundColor = "grey";
 	document.getElementById("button2").style.backgroundColor = "grey";
-	document.getElementById("button1").setAttribute('cursor', 'not-allowed'); 
-	document.getElementById("button2").setAttribute('cursor', 'not-allowed'); 
+	document.getElementById("button1").style.cursor = 'not-allowed' 
+	document.getElementById("button2").style.cursor = 'not-allowed'  
 	messages = messages1;
     // Call the playMessages function when the first message is displayed
 	displayMessage();
@@ -135,8 +135,8 @@ function script2() {
 	document.getElementById("button2").setAttribute('disabled', 'disabled');
 	document.getElementById("button1").style.backgroundColor = "grey";
 	document.getElementById("button2").style.backgroundColor = "grey";
-	document.getElementById("button1").setAttribute('cursor', 'not-allowed'); 
-	document.getElementById("button2").setAttribute('cursor', 'not-allowed');
+	document.getElementById("button1").style.cursor = 'not-allowed'  
+	document.getElementById("button2").style.cursor = 'not-allowed' 
 	console.log("disabled");
 	messages = messages2;
     // Call the playMessages function when the first message is displayed
