@@ -41,6 +41,8 @@ var messageDone = false;
 // Define a variable to store the current message type
 var messageType = "";
 
+var f
+
 // Define a function to display a message
 function displayMessage() {
     // Check if there are more messages to display
@@ -110,6 +112,7 @@ function script1() {
 	console.log("disabled");
 	messages = messages1;
     // Call the playMessages function when the first message is displayed
+	displayMessage();
     setTimeout(playMessages, 1000);
     // Define an interval to check if the current message is done and play the next one if it is true
     setInterval(function() {
@@ -130,6 +133,7 @@ function script2() {
 	console.log("disabled");
 	messages = messages2;
     // Call the playMessages function when the first message is displayed
+	displayMessage();
     setTimeout(playMessages, 1000);
     // Define an interval to check if the current message is done and play the next one if it is true
     setInterval(function() {
@@ -145,7 +149,6 @@ function script2() {
 
 
 // Add event listeners to the buttons to call the corresponding functions when clicked
-window.onload = displayMessage;
 
 document.getElementById("button1").addEventListener("click", script1);
 document.getElementById("button2").addEventListener("click", script2);
