@@ -102,8 +102,10 @@ function playMessages() {
 }
 
 function script1() {
+	console.log("in script 1!");
 	document.getElementById("button1").disabled = true;
 	document.getElementById("button2").disabled = true;
+	console.log("disabled");
 	var messages = messages1;
     // Call the displayMessage function when the page is loaded
     window.onload = displayMessage;
@@ -122,8 +124,10 @@ function script1() {
 }
 
 function script2() {
+	console.log("in script 2!");
 	document.getElementById("button1").disabled = true;
 	document.getElementById("button2").disabled = true;
+	console.log("disabled");
 	var messages = messages2;
     // Call the displayMessage function when the page is loaded
     window.onload = displayMessage;
