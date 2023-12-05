@@ -57,8 +57,13 @@ function stopScript() {
         clearInterval(currentScript.interval);
         // Reset the current script to null
         currentScript = null;
+        // Reset the message index to zero
+        messageIndex = 0; // Add this line
+        // Reset the message type to empty string
+        messageType = ""; // Add this line
     }
 }
+
 
 // Define a function to display a message
 function displayMessage() {
