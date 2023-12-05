@@ -110,6 +110,8 @@ function script1() {
 	document.getElementById("button1").setAttribute('disabled', 'disabled');
 	document.getElementById("button2").setAttribute('disabled', 'disabled');
 	console.log("disabled");
+	document.getElementById("button1").style.backgroundColor = "grey";
+	document.getElementById("button2").style.backgroundColor = "grey";
 	messages = messages1;
     // Call the playMessages function when the first message is displayed
 	displayMessage();
@@ -130,6 +132,8 @@ function script2() {
 	console.log("in script 2!");
 	document.getElementById("button1").setAttribute('disabled', 'disabled');
 	document.getElementById("button2").setAttribute('disabled', 'disabled');
+	document.getElementById("button1").style.backgroundColor = "grey";
+	document.getElementById("button2").style.backgroundColor = "grey";
 	console.log("disabled");
 	messages = messages2;
     // Call the playMessages function when the first message is displayed
