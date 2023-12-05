@@ -1,3 +1,4 @@
+var messages; 
 var messages1 = [
     {type: "person1", text: "<ANSWER>\nI appreciate SportCo's proposal, but I believe we need to consider the environmental impact more seriously. I propose we go for a water/land-based park (A2) and make efforts to improve the environment (B3). I am flexible on the other issues. \n</ANSWER>"},
     {type: "person2", text: "<ANSWER>\nI appreciate the Environmental League's concerns about the environment. I am willing to agree to a water/land-based park (A2) and efforts to improve the environment (B3). For the other issues, I propose we go with no union preference (C4), a federal loan of $3 billion (D1), and no compensation to other cities (E5).\n</ANSWER>"},
@@ -106,7 +107,7 @@ function script1() {
 	document.getElementById("button1").setAttribute('disabled', 'disabled');
 	document.getElementById("button2").setAttribute('disabled', 'disabled');
 	console.log("disabled");
-	var messages = messages1;
+	messages = messages1;
     // Call the displayMessage function when the page is loaded
     window.onload = displayMessage;
     // Call the playMessages function when the first message is displayed
@@ -128,7 +129,7 @@ function script2() {
 	document.getElementById("button1").setAttribute('disabled', 'disabled');
 	document.getElementById("button2").setAttribute('disabled', 'disabled');
 	console.log("disabled");
-	var messages = messages2;
+	messages = messages2;
     // Call the displayMessage function when the page is loaded
     window.onload = displayMessage;
     // Call the playMessages function when the first message is displayed
