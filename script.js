@@ -153,8 +153,8 @@ function playMessages() {
         var message = messages[messageIndex];
         // Get the current character from the message text by using substring method with charIndex and charIndex + 1 as arguments 
         var char = message.text.substring(charIndex, charIndex + 1);
-        // Append the character to last list item element in chat messages list using innerHTML property 
-        document.getElementById("chat-messages").lastChild.innerHTML += char;
+        // Append the character to last list item element in chat messages list using text method of jQuery 
+        $("#chat-messages").lastChild.text($("#chat-messages").lastChild.text() + char);
         // Scroll to the bottom of the chat messages list
         document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
         // Increment the character index by one
